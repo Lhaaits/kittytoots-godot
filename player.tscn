@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvbehceu67p32"]
+
+[ext_resource type="PackedScene" uid="uid://foupcxwksw1v" path="res://kitty.tscn" id="1_3lsda"]
+[ext_resource type="Script" path="res://player.gd" id="1_nfiv8"]
+[ext_resource type="PackedScene" uid="uid://cf234exni5dl4" path="res://fart.tscn" id="2_vnyog"]
+
+[node name="Player" type="RigidBody2D"]
+position = Vector2(563, 1000)
+gravity_scale = 3.45
+script = ExtResource("1_nfiv8")
+up_factor = 1000
+fart_scene = ExtResource("2_vnyog")
+
+[node name="Kitty" parent="." instance=ExtResource("1_3lsda")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.25, 0.25)
+polygon = PackedVector2Array(-52, -108, 24, -156, 140, -120, 192, 16, 248, -4, 228, 144, 108, 128, 24, 60, -60, 140, -176, 80, -128, -24)

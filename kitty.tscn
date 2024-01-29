@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://foupcxwksw1v"]
+
+[ext_resource type="Texture2D" uid="uid://be2jyoivwbxcf" path="res://Cat.png" id="1_5vqe6"]
+[ext_resource type="Script" path="res://kitty.gd" id="2_8v6bu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lcleh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5vqe6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_1lpxg"]
+
+[node name="Kitty" type="AnimatedSprite2D"]
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_lcleh")
+script = ExtResource("2_8v6bu")
+
+[node name="Skeleton2D" type="Skeleton2D" parent="."]
+modification_stack = SubResource("SkeletonModificationStack2D_1lpxg")
+
+[node name="Hip" type="Bone2D" parent="Skeleton2D"]
+position = Vector2(-81, 82)
+
+[node name="Bone2D" type="Bone2D" parent="Skeleton2D/Hip"]
+position = Vector2(52, -84)
+
+[node name="Bone2D" type="Bone2D" parent="Skeleton2D/Hip/Bone2D"]
+position = Vector2(64, -54)
+
+[node name="Bone2D2" type="Bone2D" parent="Skeleton2D/Hip/Bone2D/Bone2D"]
+position = Vector2(134, 144)
+
+[node name="Bone2D3" type="Bone2D" parent="Skeleton2D/Hip/Bone2D/Bone2D/Bone2D2"]
+position = Vector2(31, 0)
+
+[node name="Bone2D4" type="Bone2D" parent="Skeleton2D/Hip/Bone2D/Bone2D/Bone2D2/Bone2D3"]
+position = Vector2(45, -72)
+rotation = -1.19965
+scale = Vector2(1.23212, 1)
+
+[node name="Bone2D4" type="Bone2D" parent="Skeleton2D/Hip/Bone2D/Bone2D/Bone2D2"]
+position = Vector2(-40, 34)
+rotation = 2.50914
+scale = Vector2(1, 0.793607)
+
+[node name="Bone2D" type="Bone2D" parent="Skeleton2D/Hip/Bone2D/Bone2D/Bone2D2"]
+position = Vector2(20, 62.22)
+rotation = 1.57676
+scale = Vector2(2.551, 1)
+
+[node name="Bone2D2" type="Bone2D" parent="Skeleton2D/Hip"]
+position = Vector2(-0.507721, 1.11502)
+rotation = 2.8121
+
+[node name="Bone2D" type="Bone2D" parent="Skeleton2D/Hip/Bone2D2"]
+position = Vector2(66.712, 16.5932)
+rotation = -0.909829
+
+[node name="Butt" type="Node2D" parent="."]
+position = Vector2(-72, 84)

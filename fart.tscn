@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=3 uid="uid://cf234exni5dl4"]
+
+[ext_resource type="Texture2D" uid="uid://8w4soebt5w26" path="res://Fart.png" id="1_gmtly"]
+[ext_resource type="Script" path="res://fart.gd" id="2_qwfrt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8udrc"]
+atlas = ExtResource("1_gmtly")
+region = Rect2(0, 0, 340, 340)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tw5o5"]
+atlas = ExtResource("1_gmtly")
+region = Rect2(340, 0, 340, 340)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hspn5"]
+atlas = ExtResource("1_gmtly")
+region = Rect2(680, 0, 340, 340)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eranh"]
+atlas = ExtResource("1_gmtly")
+region = Rect2(1020, 0, 340, 340)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7edss"]
+atlas = ExtResource("1_gmtly")
+region = Rect2(1360, 0, 340, 340)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ercob"]
+atlas = ExtResource("1_gmtly")
+region = Rect2(1700, 0, 340, 340)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j574s"]
+atlas = ExtResource("1_gmtly")
+region = Rect2(2040, 0, 340, 340)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i6sdh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8udrc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tw5o5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hspn5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eranh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7edss")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ercob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j574s")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Fart" type="AnimatedSprite2D"]
+scale = Vector2(0.15, 0.15)
+sprite_frames = SubResource("SpriteFrames_i6sdh")
+script = ExtResource("2_qwfrt")
+fart_color = Color(0, 0.729412, 0, 0.682353)
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
