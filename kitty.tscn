@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://foupcxwksw1v"]
+[gd_scene load_steps=7 format=3 uid="uid://foupcxwksw1v"]
 
 [ext_resource type="Texture2D" uid="uid://be2jyoivwbxcf" path="res://Cat.png" id="1_5vqe6"]
 [ext_resource type="Script" path="res://kitty.gd" id="2_8v6bu"]
@@ -14,7 +14,16 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SkeletonModification2D" id="SkeletonModification2D_ukxj5"]
+
+[sub_resource type="SkeletonModification2DPhysicalBones" id="SkeletonModification2DPhysicalBones_wfqwc"]
+fetch_bones = null
+
 [sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_1lpxg"]
+enabled = true
+modification_count = 2
+modifications/0 = SubResource("SkeletonModification2D_ukxj5")
+modifications/1 = SubResource("SkeletonModification2DPhysicalBones_wfqwc")
 
 [node name="Kitty" type="AnimatedSprite2D"]
 scale = Vector2(0.25, 0.25)
@@ -63,4 +72,4 @@ position = Vector2(66.712, 16.5932)
 rotation = -0.909829
 
 [node name="Butt" type="Node2D" parent="."]
-position = Vector2(-72, 84)
+position = Vector2(-96, 144)

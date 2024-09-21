@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://cxcivpi8nteer"]
+
+[ext_resource type="Script" path="res://branch_manager.gd" id="1_hfikw"]
+[ext_resource type="PackedScene" uid="uid://dfllirj6njjv6" path="res://branch_upper.tscn" id="1_lyecd"]
+[ext_resource type="Script" path="res://Move_Branches.gd" id="2_rbh2k"]
+[ext_resource type="PackedScene" uid="uid://drhj7hwiiladd" path="res://branch_lower.tscn" id="2_w6okx"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_yc2v3"]
+
+[node name="BranchManager" type="Node2D"]
+script = ExtResource("1_hfikw")
+
+[node name="Center" type="Node2D" parent="."]
+script = ExtResource("2_rbh2k")
+
+[node name="BranchLower" parent="Center" instance=ExtResource("2_w6okx")]
+rotation = -0.158754
+
+[node name="BranchUpper" parent="Center" instance=ExtResource("1_lyecd")]
+material = SubResource("CanvasItemMaterial_yc2v3")
+
+[node name="BranchTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="BranchTimer" to="." method="_on_branch_timer_timeout"]

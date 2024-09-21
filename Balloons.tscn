@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmch0jk0oe1hx"]
+
+[ext_resource type="Texture2D" uid="uid://cirqpx4lxpy88" path="res://Balloon.png" id="1_vbajb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kv8mo"]
+
+[node name="Balloon" type="Sprite2D"]
+texture = ExtResource("1_vbajb")
+offset = Vector2(-7, -315)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(-8, -446)
+scale = Vector2(13.8349, 17.1504)
+shape = SubResource("CircleShape2D_kv8mo")

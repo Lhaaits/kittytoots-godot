@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://drhj7hwiiladd"]
+
+[ext_resource type="Texture2D" uid="uid://bkydcqn7flw4e" path="res://branchLower.png" id="1_cusvx"]
+
+[node name="BranchLower" type="Sprite2D"]
+position = Vector2(0, 700)
+rotation = -0.232897
+texture = ExtResource("1_cusvx")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+gravity_scale = 0.0
+can_sleep = false
+lock_rotation = true
+freeze = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D"]
+position = Vector2(0, 10.5)
+scale = Vector2(1, -0.05)
+polygon = PackedVector2Array(-14.6149, -6914.9, -5.19043, -834.233, -92.128, 2147.57, -60.3328, 6128.27, -32.1025, 6775.44, 47.6388, 5266.62, 108.604, 1914.71, 82.4561, 229.925, 59.6952, -7061.88)

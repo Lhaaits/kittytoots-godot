@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0c8sf01mqhqi"]
+
+[ext_resource type="PackedScene" uid="uid://dvbehceu67p32" path="res://player.tscn" id="1_m6toh"]
+[ext_resource type="PackedScene" uid="uid://cxcivpi8nteer" path="res://branch_manager.tscn" id="2_engm1"]
+
+[node name="level" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_m6toh")]
+
+[node name="BranchManager" parent="." instance=ExtResource("2_engm1")]
+position = Vector2(881, 974)
