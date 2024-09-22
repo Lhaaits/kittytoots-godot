@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvbehceu67p32"]
+[gd_scene load_steps=6 format=3 uid="uid://dvbehceu67p32"]
 
 [ext_resource type="PackedScene" uid="uid://foupcxwksw1v" path="res://kitty.tscn" id="1_3lsda"]
 [ext_resource type="Script" path="res://player.gd" id="1_nfiv8"]
 [ext_resource type="PackedScene" uid="uid://cf234exni5dl4" path="res://fart.tscn" id="2_vnyog"]
 [ext_resource type="PackedScene" uid="uid://bmch0jk0oe1hx" path="res://Balloons.tscn" id="3_542tk"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lwj8w"]
+radius = 21.2422
+height = 86.563
 
 [node name="Player" type="RigidBody2D"]
 position = Vector2(563, 1000)
@@ -29,6 +33,7 @@ scale = Vector2(0.156, 0.16)
 
 [node name="Kitty" parent="." instance=ExtResource("1_3lsda")]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-scale = Vector2(0.25, 0.25)
-polygon = PackedVector2Array(-52, -108, 24, -156, 140, -120, 192, 16, 248, -4, 228, 144, 108, 128, 24, 60, -60, 140, -176, 80, -128, -24)
+[node name="FrontCollision" type="CollisionShape2D" parent="."]
+position = Vector2(28, 0)
+rotation = -0.677553
+shape = SubResource("CapsuleShape2D_lwj8w")
